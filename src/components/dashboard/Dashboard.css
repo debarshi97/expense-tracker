@@ -1,0 +1,22 @@
+.dashboard-container {
+    background-color: rgb(104, 44, 148);
+    height: 100vh;
+    width: 100vw;
+    /* color: #8067b8; */
+}
+
+.dashboard-header{
+    background-color: white;
+    padding: 2% 0;
+}
+
+.dashboard-header-title{
+    font-size: xx-large;
+    float: left;
+    padding-top: -1%;
+}
+
+.dashboard-header-profile{
+    font-size: xx-large;
+    float: right;
+}
