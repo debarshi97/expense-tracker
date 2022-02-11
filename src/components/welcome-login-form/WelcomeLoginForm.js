@@ -23,7 +23,7 @@ const WelcomeLoginForm = () => {
   const handleLogin = (event) => {
     if(event.target.name === "email"){
         let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if ( re.test(email) ) {
+        if ( re.test(inputField.email) ) {
             // this is a valid email address
             // call setState({email: email}) to update the email
             // or update the data in redux store.

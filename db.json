@@ -1,0 +1,15 @@
+{
+  "statement": {
+    "topic": "Balance",
+    "data": [
+      {
+        "property": "wallet",
+        "value": 256057
+      },
+      {
+        "property": "bank",
+        "value": 12245750
+      }
+    ]
+  }
+}
