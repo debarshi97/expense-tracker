@@ -9,12 +9,16 @@ const DashboardCard = (props) => {
 
   return (
     <div className="card">
-      <div className="card-heading">{props.topic}</div>
-      {/* <div className="card-body">{props.body}</div> */}
-      {/* <div className='card-body'>
-        <DisplayList data={props.body}/>
-          
-      </div>   */}
+      {props.loading === "loaded" ? (
+        <div>
+          <div className="card-heading">{props.topic}</div>
+          <div className="card-body">
+            <DisplayList data={props.data} />
+          </div>
+        </div>
+      ) : (
+        <div className="card-heading">Loading...</div>
+      )}
     </div>
   );
 };

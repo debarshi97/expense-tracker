@@ -10,3 +10,5 @@ export const string_resources = {
         BUTTON_SIGNUP : "Signup"
     }
 }
+
+export const url = "http://localhost:5000"

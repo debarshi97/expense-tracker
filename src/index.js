@@ -10,7 +10,8 @@ import statementReducer from "./features/statement";
 // setting up store for access global state
 const store = configureStore({          
   reducer: {
-    statement : statementReducer},
+    statement : statementReducer
+  },
 });
 
 // provider providing the store to the root App

@@ -20,4 +20,5 @@
 
 .card-body{
     padding-bottom: 1.5em;
+    height: fit-content;
 }

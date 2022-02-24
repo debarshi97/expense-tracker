@@ -3,35 +3,17 @@ import "./Dashboard.css";
 import { string_resources } from "../../resources/Strings";
 import logo from "../../resources/images/salary.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import axios from "axios";
 import DashboardCard from "../cards/DashboardCard";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchStatementData, selectStatementData } from "../../features/statement";
 
 const Dashboard = () => {
-  const [cardData, setCardData] = useState({});
-  const [isCardDatafetched, setCardDataFetched] = useState(false);
-  
-  // let cardData = {};
-  const statement = useSelector((state) => state.statement.value);
+  const statement = useSelector(selectStatementData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    // getStatementData();
-    console.log("Card data ", statement);
-  }, [isCardDatafetched]);
-
-  const getStatementData = () => {
-    axios
-      .get("http://localhost:5000/statement")
-      .then((response) => {
-        console.log("Response data ", response.data);
-        const statementData = response.data
-        setCardData(statementData);
-        setCardDataFetched(true);
-      })
-      .catch((error) => {
-        console.log("Error ", error);
-      });
-  };
+    dispatch(fetchStatementData());
+  }, [dispatch]);
 
   return (
     <div className="dashboard-container">
@@ -44,11 +26,15 @@ const Dashboard = () => {
           fontSize="large"
           sx={{ color: "rgb(104, 44, 148)" }}
           className="dashboard-header-profile"
-          onClick={() => alert("Profile pic")}
+          onClick={() => {
+              console.log("Card Data ", statement);
+              alert("Profile pic")
+            }
+          }
         />
       </div>
       <div className="dashboard-body">
-        {/* {(cardData !== undefined && isCardDatafetched) && <DashboardCard topic={cardData.topic} data={cardData.data}/>} */}
+        <DashboardCard topic={statement.value.topic} data={statement.value.data} loading={statement.loading}/>
       </div>
     </div>
   );
