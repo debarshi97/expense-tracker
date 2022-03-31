@@ -6,13 +6,16 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DashboardCard from "../cards/DashboardCard";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchStatementData, selectStatementData } from "../../features/statement";
+import { fetchLastMonthStatusData, selectLastMonthStatus } from "../../features/lastmonthstatus";
 
 const Dashboard = () => {
   const statement = useSelector(selectStatementData);
+  const lms = useSelector(selectLastMonthStatus);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchStatementData());
+    dispatch(fetchLastMonthStatusData());
   }, [dispatch]);
 
   return (
@@ -27,15 +30,18 @@ const Dashboard = () => {
           sx={{ color: "rgb(104, 44, 148)" }}
           className="dashboard-header-profile"
           onClick={() => {
-              console.log("Card Data ", statement);
-              alert("Profile pic")
-            }
+            console.log("Card Data ", lms);
+            alert("Profile pic")
+          }
           }
         />
       </div>
       <div className="dashboard-body">
-        <DashboardCard topic={statement.value.topic} data={statement.value.data} loading={statement.loading}/>
+        <div><DashboardCard topic={statement.value.topic} data={statement.value.data} loading={statement.loading} /></div>
+        <div><DashboardCard topic={lms.value.topic} data={lms.value.data} loading={lms.loading} /></div>
+        <div><DashboardCard topic={statement.value.topic} data={statement.value.data} loading={statement.loading} /></div>
       </div>
+
     </div>
   );
 };

@@ -6,11 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import statementReducer from "./features/statement";
+import lmsReducer from "./features/lastmonthstatus";
 
 // setting up store for access global state
 const store = configureStore({          
   reducer: {
-    statement : statementReducer
+    statement : statementReducer,
+    lms: lmsReducer,
   },
 });
 

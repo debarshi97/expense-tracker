@@ -1,8 +1,21 @@
-table,
-td,
-th {
-  border: 1px solid white;
+table{
+  table-layout: fixed;
+  width: 90%;
+  border-bottom: 1px solid white;
+  border-collapse: collapse;
+}
+
+tr{
+  border-bottom: 1px solid white;
+}
+
+th,
+td {
   margin: 10px 10px;
   padding: 5px 5px;
   color: white;
+}
+
+table,tr:last-child{
+  border-bottom: 0;
 }

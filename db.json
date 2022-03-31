@@ -3,12 +3,48 @@
     "topic": "Balance",
     "data": [
       {
-        "property": "wallet",
+        "property": "Wallet",
         "value": 256057
       },
       {
-        "property": "bank",
+        "property": "Bank",
         "value": 12245750
+      }
+    ]
+  },
+
+  "last-month-status": {
+    "topic": "Last Month Status",
+    "data": [
+      {
+        "property": "Total Income",
+        "value": 55000
+      },
+      {
+        "property": "Total Expense",
+        "value": 20000
+      },
+      {
+        "property": "Saving Balance",
+        "value": 35000
+      }
+    ]
+  },
+
+  "upcoming-expense-hint": {
+    "topic": "Last Month Status",
+    "data": [
+      {
+        "property": "Total Income",
+        "value": 55000
+      },
+      {
+        "property": "Total Expense",
+        "value": 20000
+      },
+      {
+        "property": "Saving Balance",
+        "value": 35000
       }
     ]
   }
